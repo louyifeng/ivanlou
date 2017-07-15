@@ -1,0 +1,271 @@
+.stage{
+   margin:0;
+   width: 100%;
+   height: 100%;
+}
+
+
+.section{
+ 
+   width: 24.75%;
+   background-color: black;
+   height: 250px;
+   float: left;
+   background-size: cover;
+   background-position: center center;
+}
+
+
+
+.projecttitle{
+   position: absolute;
+   width: 100%;
+   height: 42px;
+   background-color: #f8f8f7;
+   left: 0;
+   top: calc(100vh - 35px);
+   color: black;
+   box-shadow: 0px 7px 21px -8px rgba(0,0,0,0.24);
+   z-index: 99;
+   margin:0;
+}
+.credit p{
+   width: 100%;
+   text-align: center;
+   font-size:0.7em;
+   color: grey;
+   font-weight: 100;
+   bottom: 12px;
+   position: relative;
+}
+.projecttitle2{
+   position: absolute;
+   width: 100%;
+   height: 42px;
+   background-color: #f8f8f7;
+   left: 0;
+   top: calc(300vh + 792px);
+   color: black;
+   box-shadow: 0px 7px 21px -8px rgba(0,0,0,0.24);
+   z-index: 99;
+   margin:0;
+}
+
+.notes{
+   width: 100%;
+   height: 22px;
+   background-color: #f8f8f7;
+   left: 0;
+   color: black;
+   box-shadow: 0px 7px 21px -8px rgba(0,0,0,0.24);
+   z-index: 99;
+   margin:0;
+   font-size: 0.7em;
+   font-weight: 300;
+}
+
+.notes p{
+   position: relative;
+   width: 50%;
+   left: 15.7%;
+   bottom: 15px;
+}
+
+.projecttitle p{
+   position: relative;
+   left: 15.7%;
+   font-weight: 600;
+   line-height: 30px;
+   letter-spacing: 1.3px;
+   bottom: 12px;
+   width: 800px;
+}
+
+.projecttitle2 p{
+   position: relative;
+   left: 15.7%;
+   font-weight: 600;
+   line-height: 30px;
+   letter-spacing: 1.3px;
+   bottom: 12px;
+   width: 400px;
+}
+
+.first{
+   width: 100%;
+   height: 100vh;
+   background-image: url(images/lightbulb.jpg);
+   background-size: cover;
+   background-position: center center;
+   text-align: center;
+   color: black;
+}
+
+.first p{
+   position: absolute;
+   width: 100%;
+   font-weight: 300;
+   top: calc(28% - 30px);
+   font-size: 2em;
+   line-height: 1.3em;
+   text-shadow: 0px 0px 6px #39494c;
+}
+
+.second p{
+   position: relative;
+   width: 30%;
+   font-weight: 300;
+   left: 15.2%;
+   top: 31%;
+   font-size: 0.9em;
+   line-height: 1.6em;
+   margin: 0.5em;
+}
+
+
+.second{
+   width: 100%;
+   height: 830px;
+   background-image: url(images/cup.jpg);
+   background-size: cover;
+   background-position: center center;
+   color: white;
+}
+
+
+.third{
+   width: 100%;
+   height: 50vh;
+   background-image: url(images/light.jpg);
+   background-size: cover;
+   background-position: center center;
+   color: white;
+}
+
+
+
+.third p{
+   position: relative;
+   width: 30%;
+   font-weight: 300;
+   left: 15.2%;
+   top: 20%;
+   font-size: 0.9em;
+   line-height: 1.6em;
+   margin: 0.5em;
+   color: white;
+}
+
+.fourth{
+   width: 100%;
+   height: 30px;
+   background-color: #f8f8f7;
+   position: relative;
+   color: black;
+   text-align: center;
+   letter-spacing: 0.15em;
+   box-shadow: 0px 7px 21px -8px rgba(0,0,0,0.24);
+}
+
+
+
+.fifth{
+   margin-right: 0;
+}
+
+
+
+
+.credit{
+   
+   width: 100%;
+   height: 30px;
+   
+   border-style: solid;
+   border-width: 3px;
+   border-color: black;
+   background-color: #111111;
+   color: white;
+
+   left: 0;
+   position: fixed;
+  z-index: 100;
+   bottom: 0; opacity: 1;
+}
+
+.credit img{
+   right: 2%;
+   position: absolute;
+   top: 5px;
+
+}
+
+.title{
+   
+   width: 100%;
+   height: 40px;
+   color: white;
+   position: fixed;
+   left: 0;top:0;
+   background-color: black;
+}
+
+.title p{
+   position: absolute;
+   width: 200px;
+   height: 30px;
+   left: 15%;top: -12px;
+   font-weight: 600;
+   line-height: 30px;
+   letter-spacing: 1.8px;
+   text-align: center;
+}
+
+.nav{
+   
+   width: auto;
+   height: 30px;
+   color: white;
+   top: 7px;
+   right: 19%;
+   position: fixed;
+   text-align: center;
+   line-height: 30px;
+   letter-spacing: 1.8px;
+   font-weight: 100;
+   font-size: 0.8em;
+
+   animation:move2 1s;
+   animation-delay:6s; 
+   animation-fill-mode: forwards;
+   word-spacing:20px;
+
+}
+
+
+
+
+
+
+.stage{
+   margin-top:0;
+}
+
+
+
+body {
+	font: 18px/30px Sans-serif; 
+	font-family: "proxima-nova";
+   margin:0;
+   background-color: black;
+}
+
+a{
+   text-decoration: none;
+   color: white;
+   transition: 0.25s;
+}
+
+a:hover{
+   color: #cccccc;
+}
