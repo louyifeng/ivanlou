@@ -1,7 +1,92 @@
-.stage{
-   margin:0;
+.warningb{
+    background-color: #353535;
+    /* IE9, iOS 3.2+ */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj48c3RvcCBzdG9wLWNvbG9yPSIjNTA1MDUwIiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiMxOTE5MTkiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIxIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI3ZzZ2cpIiAvPjwvc3ZnPg==);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%,color-stop(0, rgb(80, 80, 80)),color-stop(1, rgb(25, 25, 25)));
+    /* Android 2.3 */
+    background-image: -webkit-repeating-linear-gradient(top,rgb(80, 80, 80) 0%,rgb(25, 25, 25) 100%);
+    /* IE10+ */
+    background-image: repeating-linear-gradient(to bottom,rgb(80, 80, 80) 0%,rgb(25, 25, 25) 100%);
+    background-image: -ms-repeating-linear-gradient(top,rgb(80, 80, 80) 0%,rgb(25, 25, 25) 100%);
    width: 100%;
    height: 100%;
+   position:fixed;
+   top: 0;
+   left: 0;
+   z-index:-1000;
+   text-align: center;
+}
+
+.warningb p{
+   font-size: 2em;
+   color: white;
+   top: 30%;
+   width: 40%;
+   left: 30%;
+   position: absolute;
+   line-height: 1.5em;
+   font-weight: 200;
+}
+
+@media screen and (max-width:1024px) {
+   .warningb{
+   z-index: 1900;
+}
+}
+
+
+
+
+.warning{
+    background-color: #353535;
+    /* IE9, iOS 3.2+ */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj48c3RvcCBzdG9wLWNvbG9yPSIjNTA1MDUwIiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiMxOTE5MTkiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIxIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI3ZzZ2cpIiAvPjwvc3ZnPg==);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%,color-stop(0, rgb(80, 80, 80)),color-stop(1, rgb(25, 25, 25)));
+    /* Android 2.3 */
+    background-image: -webkit-repeating-linear-gradient(top,rgb(80, 80, 80) 0%,rgb(25, 25, 25) 100%);
+    /* IE10+ */
+    background-image: repeating-linear-gradient(to bottom,rgb(80, 80, 80) 0%,rgb(25, 25, 25) 100%);
+    background-image: -ms-repeating-linear-gradient(top,rgb(80, 80, 80) 0%,rgb(25, 25, 25) 100%);
+   width: 100%;
+   height: 100%;
+   position:fixed;
+   top: 0;
+   left: 0;
+   z-index:-1000;
+   text-align: center;
+}
+
+.warning p{
+   font-size: 2em;
+   color: white;
+   top: 30%;
+   width: 40%;
+   left: 30%;
+   position: absolute;
+   line-height: 1.5em;
+   font-weight: 200;
+}
+@media screen and (max-aspect-ratio: 1/1) {
+   .warning{
+   z-index: 1000;
+}
+  .warningb p{
+      font-size: 3em;
+      top: 30%;
+   }
+   .warning p{
+      font-size: 3em;
+      top: 30%;
+   }
+}
+
+
+
+.stage{
+   position: relative;
+   margin:0;
+   width: auto;
+   height: auto;
    background-color: #f4f4f4;
 }
 
@@ -45,8 +130,13 @@
 }
 
 .section{
-   margin-bottom:2px;
-   width: 24.90%;
+   /*margin-bottom:2px;
+   width: 24.90%;*/
+   border-right:2px #f4f4f4;
+   border-left:0;
+   border-top:2px #f4f4f4;
+   border-style:solid;
+   width: calc(25% - 1.5px);
    background-color: grey;
    height: 200px;
    float: left;
@@ -69,7 +159,6 @@
 
 
 .first{
-   margin-bottom:2px;
    background-color: grey;
    float: left;
    background-size: cover;
@@ -93,7 +182,7 @@
 
 .second{
    background-image: url(images/herbivore.jpg);
-   margin-right: 0.13%;
+
    margin-bottom: 30px;
    
 
@@ -101,18 +190,19 @@
 
 .third{
     background-image: url(images/poster.jpg);
-   margin-right: 0.13%;
+
 }
 
 .fourth{
    background-image: url(images/dangerousidea.jpg);
-    margin-right: 0.13%;
+
     background-size: auto 100%;
 }
 
 .fifth{
    background-image: url(images/work.png);
    margin-right: 0;
+   border-right: 0;
 }
 
 
