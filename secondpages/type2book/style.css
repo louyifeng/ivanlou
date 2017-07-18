@@ -159,7 +159,7 @@
 
 .second img{
     position: relative;
-  box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.15);
+  box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.1);
    width: 29%;
     height: auto;
    left: 15.8%;
@@ -178,7 +178,7 @@
 
 .third img{
     position: relative;
-  box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.15);
+  box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.1);
    width: 29%;
     height: auto;
    left: 56.1%;
@@ -276,7 +276,6 @@
    letter-spacing: 1.8px;
    font-weight: 100;
    font-size: 0.8em;
-
    animation:move2 1s;
    animation-delay:6s; 
    animation-fill-mode: forwards;
@@ -285,7 +284,23 @@
 }
 
 
+.sixth .sample{
+  position: relative;
+  box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.1);
+  width: 29%;
+  height: auto;
+  left: 56.1%;
+  margin-top: -11%;
+}
 
+.sixth img{
+    position: relative;
+  box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.05);
+   width: 100%;
+    left: 21.4%;
+   margin-top:7%; 
+   margin-bottom:15px; 
+}
 
 
 .stage{
@@ -363,4 +378,6 @@ body:not(.pace-done) > :not(.pace),body:not(.pace-done):before,body:not(.pace-do
   opacity:0
 }
 
-
+.item{
+  width: 70%;
+}
