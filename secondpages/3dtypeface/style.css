@@ -299,7 +299,7 @@ a:hover{
 }
 
 .pace .pace-progress {
-  position: absolute;
+  position: fixed;
   z-index: 2000;
   left: calc(50% - 1rem);
   top: 40%;
