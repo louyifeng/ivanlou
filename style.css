@@ -214,7 +214,8 @@
 }
 
 .third{
-    background-image: url(images/poster.jpg);
+    background-image: url(images/poster.gif);
+
 
 }
 
@@ -235,7 +236,7 @@
 
 }
 .seventh{
-    background-image: url(images/you.jpg);
+    background-image: url(images/you.gif);
 
 }
 .eighth{
@@ -244,7 +245,7 @@
 }
 
 .ninth{
-    background-image: url(images/roy.jpg);
+    background-image: url(images/roy.gif);
     margin-right: 0;
     border-right: 0;
     margin-bottom: 30px;
