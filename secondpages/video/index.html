@@ -28,6 +28,18 @@
 			});
 
 
+$(document).ready(function(){
+
+  		$(".button").click(function(){
+
+  			$("html, body"). animate({
+
+  				scrollTop: $(".fourth").offset().top
+
+  			},1000);
+
+  		})
+  		});
 
 </script>
 
@@ -38,7 +50,7 @@
 
 <body>
 <div class="stage">
-<div class="first"><p> <span style="font-weight: 600;font-size: 0.7em;line-height: 2.3em;">A Short Typographic Moive</span><br>"I have not failed. I've just found 10,000 ways that won't work"   <br> <span style="font-weight: 100;font-size: 0.5em;"> Watch the film</span></p>
+<div class="first"><p> <span style="font-weight: 600;font-size: 0.7em;line-height: 2.3em;">A Short Typographic Moive</span><br>"I have not failed. I've just found 10,000 ways that won't work"   <br> <span class="button" style="font-weight: 100;font-size: 0.5em;">Watch the film</span></p>
 </div>
 <div  id="pin2" class="section projecttitle"><p>PROJECT: TYPE IN MOTION</p></div>
 

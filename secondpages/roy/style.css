@@ -107,20 +107,18 @@
    background-image: url(images/roy.jpg);
    background-size: auto 100%;
    background-position: center center;
-   text-align: right;
-   color: white;
+   text-align: center;
+   color: #a30035;
 }
 
 .first p{
    position: absolute;
    width: 100%;
    font-weight: 300;
-   top: 10%;
-   right: 15%;
+   top: calc(28% - 30px);
    font-size: 2em;
-   line-height: 0.8em;
-   text-shadow: 0px 0px 10px #5e1b17;
-   color: #ef473c;
+   line-height: 1.3em;
+   text-shadow: 0px 0px 6px #39494c;
 }
 
 .second p{
