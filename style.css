@@ -351,7 +351,7 @@
 }
 
 @keyframes move1{
-   0%{left: calc(50% - 98px);top: calc(50% - 4.5vh);}
+   0%{left: calc(50% - 96px);top: calc(50% - 4.5vh);}
    50%{left: 15%;top: calc(50% - 4.5vh);}
    100%{left: 15%;top: 0.5vh;}
 }
@@ -404,7 +404,7 @@ a{
    font-size: 2.3vh;
    color: white;
    top: calc(50% - 4.5vh);
-   left: calc(50% - 98px);
+   left: calc(50% - 96px);
    position: fixed;
    text-align: center;
    margin-bottom: 0.2vh;
