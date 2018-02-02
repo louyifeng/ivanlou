@@ -286,9 +286,6 @@ a{
 a:hover{
    color: #cccccc;
 }
-
-
-
 .pace {
   -webkit-pointer-events: none;
   pointer-events: none;
@@ -339,6 +336,7 @@ body > :not(.pace),body:before,body:after {
 body:not(.pace-done) > :not(.pace),body:not(.pace-done):before,body:not(.pace-done):after {
   opacity:0
 }
+
 
 
 
