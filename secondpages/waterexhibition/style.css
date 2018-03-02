@@ -171,9 +171,21 @@
 }
 
 .fifth{
- height: 58vw;
+ height: auto;
  width: 100%;
  background-color:  #f4f4f4;
+}
+
+.fifth p{
+   position: relative;
+   width: 70%;
+   font-weight: 300;
+   left: 15.2%;
+   top: 20%;
+   font-size: 0.9em;
+   line-height: 1.6em;
+   margin: 0.5em;
+   color: black;
 }
 
 
