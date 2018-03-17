@@ -1,4 +1,21 @@
 
+.resizer{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+
+@media (min-width: 1920px) {
+.resizer{
+  position: relative;
+  width: 1700px;
+  left: calc(50% - 850px);
+  height: 100%;
+}
+
+}
+
 
 .stage{
    margin:0;
