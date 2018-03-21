@@ -11,25 +11,29 @@
 
 .stage{
    width: 100%;
+   height: auto;
 }
 
 .first{
    width: 100%;
    color: black; 
+   height: auto;
 }
 
 .first p{
-   float: left;
+  margin-bottom: 30px;
    margin-right: 8%;
+   width: 300px;
 }
 
 .words{
    position: absolute;
-   float: left;
+
    top: 20%;
    left: 15.7%;
    width: 20%;
 }
+
 .credit{
    
    width: 100%;
@@ -111,7 +115,7 @@ body {
 	font-family: "proxima-nova";
    margin:0;
    background-color: black;
-   height: 140vh;
+   height: 170vh;
 }
 
 a{
