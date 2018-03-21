@@ -6,15 +6,7 @@
 }
 
 
-@media (min-width: 1920px) {
-.resizer{
-  position: relative;
-  width: 1700px;
-  left: calc(50% - 850px);
-  height: 100%;
-}
 
-}
 
 
 .stage{
@@ -62,7 +54,7 @@
    height: 42px;
    background-color: #f8f8f7;
    left: 0;
-   top: 300vh;
+   top: calc(100vh + 190vw);
    color: #ef473c;
    box-shadow: 0px 7px 21px -8px rgba(0,0,0,0.24);
    z-index: 99;
@@ -142,10 +134,10 @@
 
 .second p{
    position: relative;
-   width: 32%;
+   width: 68%;
    font-weight: 300;
    left: 15.2%;
-   top: 8%;
+   top: 5%;
    font-size: 0.9em;
    line-height: 1.6em;
    margin: 0.5em;
@@ -171,31 +163,11 @@
 
 .owl-theme{
   position: relative;
-  margin-top: 13%;
+  margin-top: -5%;
 
 }
 
 
-@media screen and (max-width:958px) {
-  
-.second .change{
-  position: relative;
-   width: 70%;
-   font-weight: 300;
-   left: 15.2%;
-   top: 8%;
-   font-size: 0.9em;
-   line-height: 1.6em;
-   margin: 0.5em;
-   z-index: 20;
-}
-
-.owl-theme{
-  position: relative;
-  margin-top: 8%;
-}
-
-}
 
 
 .third p{
@@ -211,18 +183,18 @@
 
 .second{
    width: 100%;
-   height: 200vh;
+   height: 190vw;
    background-color: #f4f4f4;
    color: black;
 }
 
 
 .second .poster{
-    position: absolute;
-   top: calc(100vh + 11%);
-   width: 38%;
-    height: auto;
-   right: 13%;
+  position: relative;
+   margin-top:14%;
+   width:70%;
+
+   left: 12%;
 }
 
 
@@ -239,7 +211,7 @@
    width: 29%;
     height: auto;
    left: 56.1%;
-   margin-top:9%;
+
   
 }
 
@@ -371,7 +343,7 @@ a:hover{
     height: auto;
     left: 23.5%;
     margin-bottom: 10px;
-    margin-top: 13%;
+
 }
 
 
@@ -427,3 +399,29 @@ body:not(.pace-done) > :not(.pace),body:not(.pace-done):before,body:not(.pace-do
   opacity:0
 }
 
+
+@media (min-width: 1920px) {
+.resizer{
+  position: relative;
+  width: 1700px;
+  left: calc(50% - 850px);
+  height: 100%;
+}
+
+.second{
+  height: 3000px;
+}
+
+.projecttitle2{
+   position: absolute;
+   width: 100%;
+   height: 42px;
+   background-color: #f8f8f7;
+   left: 0;
+   top: calc(100vh + 3000px);
+   color: #ef473c;
+   box-shadow: 0px 7px 21px -8px rgba(0,0,0,0.24);
+   z-index: 99;
+   margin:0;
+}
+}
