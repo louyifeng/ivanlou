@@ -29,7 +29,7 @@
 .words{
    position: absolute;
 
-   top: 20%;
+   top: 15%;
    left: 15.7%;
    width: 20%;
 }
@@ -187,5 +187,11 @@ body:not(.pace-done) > :not(.pace),body:not(.pace-done):before,body:not(.pace-do
    color: #888888;
 }
 
+@media (min-width: 1920px) {
+body{
+  height: 100vh;
+}
+
+}
 
 
