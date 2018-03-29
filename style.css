@@ -126,7 +126,7 @@
    width: 100%;
    text-align: center;
    font-size:0.7em;
-   color: grey;
+   color: white;
    font-weight: 100;
    bottom: 12px;
    position: relative;
@@ -158,11 +158,12 @@
    text-shadow: 0px 0px 6px #39494c;
    background-image:rgba(0, 0, 0, 0.5);
 }
+
+
 .section p{
    padding-left:10%;
    padding-top:8%;
    line-height: 1.4em;
-
 }
 
 
@@ -182,10 +183,31 @@
 
 .eleventh{
   width: 49.87%; margin-right: 0;
-    border-right: 0;
-    margin-bottom: 30px;
-    background-image: url(images/fortune.jpg);
+  border-right: 0;
+  background-image: url(images/fortune.jpg);
 }
+
+
+.twelveth{
+  width: 100%; 
+  height: 10vh;
+    margin-bottom: 30px;
+    color: white;
+    background-image: url(images/current.jpg);
+    background-size: auto 100%;
+
+}
+
+.twelveth p{
+  position: absolute;
+  padding: 0;
+  height: 0;
+  width: 0;
+
+}
+
+
+
 
 .first{
    background-color: grey;
@@ -292,12 +314,12 @@
 .credit{
    
    width: 100%;
-   height: 30px;
+   height: 36px;
    
-   border-style: solid;
-   border-width: 3px;
-   border-color: #111111;
-   background-color: #111111;
+
+
+
+   background-color: black;
    color: white;
    bottom: calc(50% + 4px);
    left: 0;
@@ -315,7 +337,12 @@
    top: 5px;
 }
 
+.credit.scrolled {
+  background-color: #d2b45c;
 
+  transition: background-color 600ms linear;
+
+}
 
 .nav{
    
