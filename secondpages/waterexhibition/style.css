@@ -41,7 +41,7 @@
    background-color: #f8f8f7;
    left: 0;
    top: calc(100vh - 35px);
-   color: black;
+   color: #25a1d7;
    box-shadow: 0px 7px 21px -8px rgba(0,0,0,0.24);
    z-index: 99;
    margin:0;
@@ -181,7 +181,7 @@
    height: 30px;
    background-color: #f8f8f7;
    position: relative;
-   color: black;
+   color: #25a1d7;
    text-align: center;
  
    box-shadow: 0px 7px 21px -8px rgba(0,0,0,0.24);
