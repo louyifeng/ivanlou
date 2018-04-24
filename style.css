@@ -338,9 +338,10 @@
 }
 
 .credit.scrolled {
-  background-color: #d2b45c;
+  background-color: #97c9b2;
 
   transition: background-color 600ms linear;
+
 
 }
 
