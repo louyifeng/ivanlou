@@ -181,7 +181,7 @@
 
 .tenth{
   margin-right:1vw;
-  background-image: url(images/dots.gif);
+  background-image: url(images/dots.jpg);
 }
 
 .maya{
@@ -194,7 +194,7 @@
 }
 
 .eleventh{
- margin-bottom: 60px;
+
   background-image: url(images/fortune.jpg);
 }
 
@@ -272,6 +272,7 @@
 
 .third{
     background-image: url(images/poster.gif);
+     margin-bottom: 60px;
 }
 
 .fourth{
