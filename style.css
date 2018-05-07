@@ -166,7 +166,7 @@
 
 .section:hover{
 
-   transform:scale(1.03);
+   
    color: white;
    text-shadow: 0px 0px 6px #39494c;
    background-image:rgba(0, 0, 0, 0.5);
@@ -302,7 +302,7 @@
 }
 
 .ninth{
-    background-image: url(images/roy.gif);
+    background-image: url(images/ringworld.jpg);
 
    
 }
