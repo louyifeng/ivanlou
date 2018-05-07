@@ -1,7 +1,8 @@
 .resizer{
   position: relative;
-  width: 100%;
+  width: 68%;
   height: 100%;
+  left: 16%;
 }
 
 @media (min-width: 1920px) {
@@ -11,8 +12,8 @@
   left: calc(50% - 850px);
   height: 100%;
 }
-}
 
+}
 
 
 .warningb{
@@ -151,7 +152,7 @@
 
 .section{
    overflow: hidden;
-   width: 33.5vw;
+   width: 49%;
    height: 35vh;
    float: left;
    background-size: auto 120%;
@@ -193,7 +194,7 @@
 }
 
 .eleventh{
-
+ margin-bottom: 60px;
   background-image: url(images/fortune.jpg);
 }
 
@@ -324,10 +325,6 @@
    
    width: 100%;
    height: 36px;
-   
-
-
-
    background-color: black;
    color: white;
    bottom: calc(50% + 4px);
@@ -346,25 +343,15 @@
    top: 5px;
 }
 
-.credit.scrolled {
-  background-color: #97c9b2;
 
-  transition: background-color 600ms linear;
-
-
-}
 
 .nav{
    
    width: auto;
    height: 5vh;
-   color: white;
-   
+   color: white;   
    position: fixed;
    text-align: center;
-  
- 
-
    font-size: 1.7vh;
    opacity: 0;
    animation:move2 1s;
@@ -372,16 +359,14 @@
    animation-fill-mode: forwards;
    word-spacing:20px;
    height: 30px;
-color: white;
-top: 7px;
-right: 19%;
-
-
-text-align: center;
-line-height: 30px;
-letter-spacing: 1.8px;
-font-weight: 100;
-font-size: 0.8em;
+   color: white;
+   top: 7px;
+   right: 19%;
+   text-align: center;
+   line-height: 30px;
+   letter-spacing: 1.8px;
+   font-weight: 100;
+   font-size: 0.8em;
 
 }
 
@@ -392,8 +377,6 @@ font-size: 0.8em;
 	animation-fill-mode: forwards;
 	left: 0;
 	margin:0;
-
-
 }
 
 @keyframes loading{
@@ -403,11 +386,8 @@ font-size: 0.8em;
 }
 
 @keyframes expand{
-   0%{width: 200px;background-color: #111111;}
-   
+   0%{width: 200px;background-color: #111111;} 
    50%{width: 100%;background-color: #111111;left: 0;top: calc(50% - 17px);}
-
-
    100%{width: 100%;background-color: #111111;left: 0;top: 0;}
 }
 
@@ -464,17 +444,13 @@ a{
 }
 
 .title{
-   
    width: 200px;
-   height: 30px;
-   
-   color: white;
-   
+   height: 30px;   
+   color: white;  
    left: 0;
    top: -31px;
    position: relative;
    text-align: center;
-
    letter-spacing: 1.8px;
    font-weight: 600;
    animation:move1 1s;
@@ -512,7 +488,6 @@ a{
 
 #bart{
  width: 110%;
- 
  position: absolute;
 
 }
@@ -540,9 +515,10 @@ a{
   background-color: #f4f4f4;
   z-index: 1;
   width: 100vw;
-  padding-left: 16%;
   top: 100vh;
   padding-top: 10vh;
   box-shadow: 0px 7px 21px -8px rgba(0,0,0,0.9);
-
 }
+
+
+
