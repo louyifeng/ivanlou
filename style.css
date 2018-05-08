@@ -149,43 +149,39 @@
    position: relative;
 }
 
-.section{
-   overflow: hidden;
-   width: 33.5%;
-   height: 35vh;
-   float: left;
-   background-size: cover;
-   background-position: center center;
+.section{  
+   width: 100%;
+   height: auto;  
    transition:all 0.2s;
-   color:transparent;
-   background-repeat: no-repeat;
-   background-color: black;
-   margin-bottom: 1vw;
+   
+}
+
+.section :hover{
+   cursor: pointer;  
+  
+   
 }
 
 .container{
   position: relative;
   width: 100%;
   height: 100%;
-  left: 16%;
+  left: 15%;
+  float: left;
 }
 
-.section:hover{
-   color: white;
-   text-shadow: 0px 0px 6px #39494c;
-   background-image:rgba(0, 0, 0, 0.5);
-}
 
-.section p{
+/*.section p{
+   position: relative;
    padding-left:10%;
    padding-top:8%;
    line-height: 1.4em;
-}
+}*/
 
-.tenth{
+/*.tenth{
   margin-right:1vw;
   background-image: url(images/dots.jpg);
-}
+}*/
 
 .maya{
   position: absolute;
@@ -196,7 +192,7 @@
   font-weight: 300;
 }
 
-.eleventh{
+/*.eleventh{
 
   background-image: url(images/fortune.jpg);
 }
@@ -215,7 +211,7 @@
   padding: 0;
   height: 0;
   width: 0;
-}
+}*/
 
 .first{
    background-color: grey;
@@ -250,26 +246,28 @@
    top: 0;
    position: relative;
    background: rgba(0, 0, 0, 0);
-   margin:0;
+   margin-left:1%;
    transition: 0.2s;
+   color: black;
+   font-weight: 500;
+  
+   line-height: 1.3em;
 }
 
-.projects p:hover{
-   background: rgba(0, 0, 0, 0.8);
+
+.project{
+  float: left;
+  width: 33%;
+  margin:1%;
+  height: auto;
+
 }
-
-
-
-
-
-.second{
-   background-image: url(images/herbivore.jpg);
+/*.second{
    margin-right:1vw;
 }
 
 .third{
-    background-image: url(images/context.jpg);
-    
+    background-image: url(images/context.jpg);   
 }
 
 .fourth{
@@ -300,7 +298,7 @@
     background-image: url(images/ringworld.jpg);
 
    
-}
+}*/
 
 .intro{
    
@@ -488,7 +486,6 @@ a{
 #bart{
  width: 110%;
  position: absolute;
-
 }
 
 .MainContainer {
