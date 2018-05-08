@@ -1,8 +1,7 @@
 .resizer{
   position: relative;
-  width: 68%;
+  width: 100%;
   height: 100%;
-  left: 16%;
 }
 
 @media (min-width: 1920px) {
@@ -152,7 +151,7 @@
 
 .section{
    overflow: hidden;
-   width: 49%;
+   width: 33.5%;
    height: 35vh;
    float: left;
    background-size: cover;
@@ -164,23 +163,24 @@
    margin-bottom: 1vw;
 }
 
-.section:hover{
+.container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  left: 16%;
+}
 
-   
+.section:hover{
    color: white;
    text-shadow: 0px 0px 6px #39494c;
    background-image:rgba(0, 0, 0, 0.5);
 }
-
-
-
 
 .section p{
    padding-left:10%;
    padding-top:8%;
    line-height: 1.4em;
 }
-
 
 .tenth{
   margin-right:1vw;
@@ -201,7 +201,6 @@
   background-image: url(images/fortune.jpg);
 }
 
-
 .twelveth{
     width: 68%;
     margin-bottom: 90px;
@@ -209,7 +208,6 @@
     color: white;
     background-image: url(images/current.jpg);
     background-size: auto 100%;
-
 }
 
 .twelveth p{
@@ -217,11 +215,7 @@
   padding: 0;
   height: 0;
   width: 0;
-
 }
-
-
-
 
 .first{
    background-color: grey;

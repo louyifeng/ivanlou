@@ -24,14 +24,25 @@
 }
 
 
-.section{
- 
-   width: 24.75%;
-   background-color: grey;
-   height: 250px;
+img{
+   width: 49%;
+   height: auto;
    float: left;
    background-size: cover;
    background-position: center center;
+   transition:all 0.2s;
+   color:transparent;
+   background-repeat: no-repeat;
+   background-color: black;
+   margin-bottom: 1vw;
+}
+
+.container{
+  position: relative;
+  width: 68%;
+  height: 100%;
+  left: 16%;
+  margin-top: 2%;
 }
 
 .projecttitle{
@@ -243,7 +254,7 @@
 
 iframe{
   position: relative;
-  margin-top: 4%;
+  margin-top: -4%;
 }
 
 .credit{
