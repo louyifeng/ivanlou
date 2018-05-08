@@ -268,8 +268,8 @@
 }
 
 .third{
-    background-image: url(images/poster.gif);
-     margin-bottom: 60px;
+    background-image: url(images/context.jpg);
+    
 }
 
 .fourth{
@@ -279,6 +279,7 @@
 
 .fifth{
    background-image: url(images/work.png);
+    margin-bottom: 60px;
 }
 
 .sixth{

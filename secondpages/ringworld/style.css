@@ -37,6 +37,18 @@ img{
    margin-bottom: 1vw;
 }
 
+.images{
+
+    position: relative;
+   width: 68%;
+    height: auto;
+    left: 16%;
+   margin-top:2%;
+
+  
+
+}
+
 .container{
   position: relative;
   width: 68%;
@@ -255,6 +267,7 @@ img{
 iframe{
   position: relative;
   margin-top: -4%;
+  margin-bottom: 0;
 }
 
 .credit{
