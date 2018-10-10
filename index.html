@@ -1,178 +1,236 @@
 <!DOCTYPE html>
-<script src="https://use.typekit.net/kim4dao.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
-<head>
-<meta charset="utf-8" />
-<title>Ivan Lou | Portfolio 2018</title>
-
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-<script src="js/scripts.js"></script>
-<link href="style.css" rel="stylesheet" />
-
-<script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
-<script src="secondpages/pace.min.js"></script>
-
-<script>
-
-
-
-
-
-    $(document).ready(function(){
-
-      $(".arrow").click(function(){
-
-        $("html, body"). animate({
-
-          scrollTop: $(".ninth").offset().top
-
-        },1000);
-
-      })
-
-
-
-    });
-
-
-
-
-</script>
-
-</head>
 <html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ivan Lou | Portfolio 2018</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript" src="paper-full.js"></script>
+    <script type="text/paperscript" canvas="canvas">
+  // Ported from original Metaball script by SATO Hiroyuki
+// http://park12.wakwak.com/~shp/lc/et/en_aics_script.html
+project.currentStyle = {
+fillColor: '#2d2d2d'
+};
 
+var ballPositions = [
+
+[100, 500],[100, 100], [100, 200], [100, 300], [100, 400],
+[200, 500],[200, 100], [200, 200], [200, 300], [200, 400],
+[300, 500],[300, 100], [300, 200], [300, 300], [300, 400],
+[400, 500],[400, 100], [400, 200], [400, 300], [400, 400],
+[500, 500],[500, 100], [500, 200], [500, 300], [500, 400],
+[600, 500],[600, 100], [600, 200], [600, 300], [600, 400],
+[700, 500],[700, 100], [700, 200], [700, 300], [700, 400],
+[800, 500],[800, 100], [800, 200], [800, 300], [800, 400],
+
+];
+
+var handle_len_rate = 1;
+var circlePaths = [];
+
+var radius = 50;
+for (var i = 0, l = ballPositions.length; i < l; i++) {
+var circlePath = new Path.Circle({
+center: ballPositions[i],
+radius: 5
+ 
+});
+circlePaths.push(circlePath);
+}
+
+var largeCircle = new Path.Circle({
+center: [676, 433],
+radius: 10
+});
+circlePaths.push(largeCircle);
+
+largeCircle.fillColor = '#ee443d';
+
+function onMouseMove(event) {
+largeCircle.position = event.point;
+generateConnections(circlePaths);
+}
+
+var connections = new Group();
+
+function generateConnections(paths) {
+// Remove the last connection paths:
+connections.children = [];
+
+for (var i = 0, l = paths.length; i < l; i++) {
+for (var j = i - 1; j >= 0; j--) {
+var path = metaball(paths[i], paths[j], 0.4, handle_len_rate, 99);
+if (path) {
+connections.appendTop(path);
+path.removeOnMove();
+}
+connections.fillColor = '#2d2d2d';
+}
+}
+}
+
+generateConnections(circlePaths);
+
+
+
+
+// ---------------------------------------------
+function metaball(ball1, ball2, v, handle_len_rate, maxDistance) {
+var center1 = ball1.position;
+var center2 = ball2.position;
+var radius1 = ball1.bounds.width / 2;
+var radius2 = ball2.bounds.width / 2;
+var pi2 = Math.PI / 2;
+var d = center1.getDistance(center2);
+var u1, u2;
+
+if (radius1 == 0 || radius2 == 0)
+return;
+
+if (d > maxDistance || d <= Math.abs(radius1 - radius2)) {
+return;
+} else if (d < radius1 + radius2) { // case circles are overlapping
+u1 = Math.acos((radius1 * radius1 + d * d - radius2 * radius2) /
+(2 * radius1 * d));
+u2 = Math.acos((radius2 * radius2 + d * d - radius1 * radius1) /
+(2 * radius2 * d));
+} else {
+u1 = 0;
+u2 = 0;
+ball1.fillColor = '#ee443d';
+ball2.fillColor = '#ee443d';
+}
+
+var angle1 = (center2 - center1).getAngleInRadians();
+var angle2 = Math.acos((radius1 - radius2) / d);
+var angle1a = angle1 + u1 + (angle2 - u1) * v;
+var angle1b = angle1 - u1 - (angle2 - u1) * v;
+var angle2a = angle1 + Math.PI - u2 - (Math.PI - u2 - angle2) * v;
+var angle2b = angle1 - Math.PI + u2 + (Math.PI - u2 - angle2) * v;
+var p1a = center1 + getVector(angle1a, radius1);
+var p1b = center1 + getVector(angle1b, radius1);
+var p2a = center2 + getVector(angle2a, radius2);
+var p2b = center2 + getVector(angle2b, radius2);
+
+// define handle length by the distance between
+// both ends of the curve to draw
+var totalRadius = (radius1 + radius2);
+var d2 = Math.min(v * handle_len_rate, (p1a - p2a).length / totalRadius);
+
+// case circles are overlapping:
+d2 *= Math.min(1, d * 2 / (radius1 + radius2));
+
+radius1 *= d2;
+radius2 *= d2;
+
+var path = new Path({
+segments: [p1a, p2a, p2b, p1b],
+style: ball1.style,
+closed: true
+});
+var segments = path.segments;
+segments[0].handleOut = getVector(angle1a - pi2, radius1);
+segments[1].handleIn = getVector(angle2a + pi2, radius2);
+segments[2].handleOut = getVector(angle2b - pi2, radius2);
+segments[3].handleIn = getVector(angle1b + pi2, radius1);
+return path;
+}
+
+// ------------------------------------------------
+function getVector(radians, length) {
+return new Point({
+// Convert radians to degrees:
+angle: radians * 180 / Math.PI,
+length: length
+});
+}
+
+    </script>
+    <style type="text/css">
+      
+
+ @font-face {
+  font-family: "apercubold";
+  src: url(apercu_bold_pro.otf);
+     
+}
+
+ @font-face {
+  font-family: "apercuregular";
+  src: url(apercu_regular_pro.otf);
+     
+}
+
+ @font-face {
+  font-family: "aperculightitalic";
+  src: url(Apercu_Pro_Light_Italic.ttf);
+     
+}
+
+
+body {
+    margin: 0;
+   background-color: black;
+    height: 100%;
+font-family: "apercubold";
+
+}
+/* Scale canvas with resize attribute to full size */
+canvas[resize] {
+    width: 900px;
+    height: 600px;
+}
+
+canvas{
+    position: absolute;
+    left: calc(50% - 450px);
+    top: calc(47vh - 300px);
+
+}
+
+.canvascover{
+    width: 900px;
+    height: 600px;
+    position: absolute;
+    left: calc(50% - 450px);
+    top: calc(47vh - 300px);
+     -moz-box-shadow:    inset 0 0 50px #000000;
+   -webkit-box-shadow: inset 0 0 50px #000000;
+   box-shadow:         inset 0 0 50px #000000;
+}
+
+.text{
+
+    font-size: 2vh;
+color: white;
+font-family: "aperculightitalic";
+margin-top: 41vh;
+
+text-align: center;
+width: 100%;
+    }
+
+    h1{
+        font-family: "apercubold";
+        font-size: 6vh;
+    }
+.logo{
+  
+    position: absolute;
+bottom: 9vh;
+left: calc(50% - 60px);
+
+   width: 120px;
+}
+ </style>
+</head>
 <body>
-
-
-<div class="warning"><p>The Website Looks Better in a Horizontal View</p></div>
-
-
-<div class="MainContainer">
-
-<div class="first ParallaxContainer">
-
- <video id="bart" autoplay="autoplay" muted loop>
-  	<source src="images/final2.mp4" type="video/mp4">
- </video>
-	<p> <span style="font-weight:300;font-size: 0.78em;line-height: 2.3em;">Hello, I am</span><br>
-	<span style="font-size: 2em;line-height: 1em;">IVAN LOU</span><br> 
-	<span style="font-weight:300;font-size: 0.78em;">Visual Designer</span></p>
-	<div class="arrow"><img src="images/arrow.png" width="200px;"></div>
-</div>
-
-<div class="projects ContentContainer">
-<div class="resizer">
-	<div class="container">
-		<div class="project">
-<a href="secondpages/waterexhibition/index.html"><div class="second"><img class="section" src="images/herbivore.jpg"></div>
-	
-
-<p>THE MUSEUM OF DRINKING WATER<br><span style="font-size: 0.9em;color: #36b685; font-weight: 400;letter-spacing: -0.02em;"> Exhibition</span></p>
-</a>
-</div>
-
-
-
-
-
-
-<div class="project">
-<a href="secondpages/amber/index.html"><div class="second"><img class="section" src="images/dangerousidea.jpg"></div>
-	<p>AMBER CAFE: NATURE, PRESERVED<br><span style="font-size: 0.9em; color: #36b685; font-weight: 400;letter-spacing: -0.02em;">Branding & Identity</span></p>
-</a>
-
-</div>
-
-
-<div class="project">
-<a href="secondpages/type2book/index.html"><div class="second"><img class="section" src="images/fortune.jpg"></div>
-	<p>INSECTS AWAKEN 惊蛰<br><span style="font-size: 0.9em; color: #36b685; font-weight: 400;letter-spacing: -0.02em;">Book & Card Design</span></p>
-</a>
-</div>
-
-
-<div class="project">
-<a href="secondpages/ringworld/index.html"><div class="second"><img class="section" src="images/ringworld.jpg"></div>
-	<p>RINGWORLD: TITLE SEQUENCE<br><span style="font-size: 0.9em; color: #36b685; font-weight: 400;letter-spacing: -0.02em;"> Motion Graphic</span></p>
-</a>
-</div>
-
-<div class="project">
-<a href="secondpages/gd3/index.html"><div class="second"><img class="section second" src="images/dots.jpg"></div>
-	<p>LIFE ON THE MOVE<br><span style="font-size: 0.9em; color: #36b685; font-weight: 400;letter-spacing: -0.02em;">Identity & Packaging</span></p>
-</a>
-</div>
-
-
-<div class="project">
-<a href="secondpages/gd2poster/index.html"><div class="second"><img class="section" src="images/context.jpg"></div>
-	<p>TADANORI YOKOO Exhibition<br><span style="font-size: 0.9em; color: #36b685; font-weight: 400;letter-spacing: -0.02em;"> Poster & Website Design</span></p>
-</a>
-</div>
-
-<div class="project">
-<a href="secondpages/3dtypeface/index.html"><div class="second"><img class="section " src="images/typeface.jpg"></div>
-	<p>3D TYPEFACE: OCTOBER<br><span style="font-size: 0.9em; color: #36b685; font-weight: 400;letter-spacing: -0.02em;"> Type Design</span></p>
-</a>
-</div>
-
-<div class="project">
-<a href="secondpages/type3chart/index.html"><div class="second"><img class="section " src="images/emmy.gif"></div>
-	<p>THE EMMY WINNER SHOWS<br><span style="font-size: 0.9em; color: #36b685; font-weight: 400;letter-spacing: -0.02em;"> Infographic & Website Design</span></p>
-</a>
-</div>
-
-<div class="project">
-<a href="secondpages/csstypeface/index.html"><div class="second"><img class="section" src="images/neon.gif"></div>
-	<p>CSS TYPEFACE<br><span style="font-size: 0.9em; color: #36b685; font-weight: 400;letter-spacing: -0.02em;"> Interactive Code</span></p>
-</a>
-</div>
-
-
-<div class="project">
-<a href="secondpages/video/index.html"><div class="second"><img class="section" src="images/work.jpg"></div>
-	<p>TYPE IN MOTION<br><span style="font-size: 0.9em; color: #36b685; font-weight: 400;letter-spacing: -0.02em;"> Motion Graphic</span></p>
-</a>
-<br><br>
-</div>
-
-
-
-
-<!-- <a href="secondpages/current/index.html"><div class="section twelveth">
-	<p></p>
-</div></a>-->
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-<div class="curtaintop"></div>
-<div class="curtainbottom"></div>
-<div class="credit"><p>Copyright © Yifeng Lou. All rights reserved.<p><img src="images/logo.png" height="17px;"></div>
-
-
-
-<div class="intro">
-<div class="loading"></div>	
-<div class="title">IVAN LOU DESIGN</div>
-</div>
-
-<div class="nav"><a href="index.html">Home</a> <a href="about/index.html">About</a> <a href="work/index.html">Works</a> <a href="contact/index.html">Contact</a>
-</div>
-
-
-<div class="warningb"><p>Coming Soon</p><p style="font-size: 0.7em;">Email me at <u>ylou2@cca.edu</u> for any inquiries.</p></div>
-
-
+    
+    <canvas id="canvas" resize></canvas>
+    <canvas class="canvascover" resize></canvas>
+    <div class="text">Email me at <u>hello@ivanlou.net</u> for any inquiries.
+    <br> <h1>Coming Soon</h1>
+    </div>
+    <img class="logo" src="logo.png" ><img>
 </body>
 </html>
-
-  
