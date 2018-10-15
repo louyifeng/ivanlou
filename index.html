@@ -15,12 +15,12 @@ fillColor: '#2d2d2d'
 var ballPositions = [
 
 [100, 500],[100, 100], [100, 200], [100, 300], [100, 400],
-[200, 500],[200, 100], [200, 200], [200, 300], [200, 400],
-[300, 500],[300, 100], [300, 200], [300, 300], [300, 400],
-[400, 500],[400, 100], [400, 200], [400, 300], [400, 400],
-[500, 500],[500, 100], [500, 200], [500, 300], [500, 400],
-[600, 500],[600, 100], [600, 200], [600, 300], [600, 400],
-[700, 500],[700, 100], [700, 200], [700, 300], [700, 400],
+[200, 500],[200, 100], [200, 200], [200, 400],<!-- [200, 300],  -->
+[300, 500],[300, 100], [300, 200], [300, 400],<!-- [300, 300], --> 
+[400, 500],[400, 100], [400, 200], [400, 400],<!-- [400, 300], --> 
+[500, 500],[500, 100], [500, 200], [500, 400],<!-- [500, 300], --> 
+[600, 500],[600, 100], [600, 200], [600, 400],<!-- [600, 300], --> 
+[700, 500],[700, 100], [700, 200],[700, 400], <!-- [700, 300], --> 
 [800, 500],[800, 100], [800, 200], [800, 300], [800, 400],
 
 ];
@@ -184,7 +184,7 @@ canvas[resize] {
 canvas{
     position: absolute;
     left: calc(50% - 450px);
-    top: calc(47vh - 300px);
+    top: calc(47vh - 350px);
 
 }
 
@@ -193,7 +193,7 @@ canvas{
     height: 600px;
     position: absolute;
     left: calc(50% - 450px);
-    top: calc(47vh - 300px);
+    top: calc(47vh - 350px);
      -moz-box-shadow:    inset 0 0 50px #000000;
    -webkit-box-shadow: inset 0 0 50px #000000;
    box-shadow:         inset 0 0 50px #000000;
@@ -204,32 +204,60 @@ canvas{
     font-size: 2vh;
 color: white;
 font-family: "aperculightitalic";
-margin-top: 41vh;
-
+margin-top: calc(47vh - 100px);
 text-align: center;
 width: 100%;
     }
 
     h1{
         font-family: "apercubold";
-        font-size: 6vh;
+        font-size: 6.5vw;
     }
 .logo{
   
     position: absolute;
 bottom: 9vh;
-left: calc(50% - 60px);
+left: calc(50% - 8vh);
 
-   width: 120px;
+  width: 16vh;
 }
+
+.social{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	bottom: 15vh;
+	color: white;
+	font-size: 2vh;
+	font-family: aperculightitalic;
+
+	}
+
+
+.social img{
+	margin:10px;
+	margin-top: 3vh;
+	width: 3.5vh;
+}
+
+a{
+ color: white;
+}	
+
  </style>
+
+
 </head>
 <body>
     
     <canvas id="canvas" resize></canvas>
     <canvas class="canvascover" resize></canvas>
-    <div class="text">Email me at <u>hello@ivanlou.net</u> for any inquiries.
-    <br> <h1>Coming Soon</h1>
+    <div class="text"><h1>Coming Soon</h1>
+    </div>
+    <div class="social">
+    	<u>Resume</u>  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a href="mailto:hello@ivanlou.net"><u>Email me</u><br>
+    	<a href="https://www.instagram.com/lyflala/"><img src="instagramlogo.png" width="25px;" ></a>
+    	<a href="https://www.linkedin.com/in/ivanloudesign/"><img src="linkedinlogo.png" width="25px;" ></a>
     </div>
     <img class="logo" src="logo.png" ><img>
 </body>
