@@ -211,22 +211,14 @@ width: 100%;
 
     h1{
         font-family: "apercubold";
-        font-size: 6.5vw;
+        font-size: 6vw;
     }
-.logo{
-  
-    position: absolute;
-bottom: 9vh;
-left: calc(50% - 8vh);
-
-  width: 16vh;
-}
 
 .social{
 	position: absolute;
 	width: 100%;
 	text-align: center;
-	bottom: 15vh;
+	bottom: 3vh;
 	color: white;
 	font-size: 2vh;
 	font-family: aperculightitalic;
@@ -234,15 +226,27 @@ left: calc(50% - 8vh);
 	}
 
 
-.social img{
+.icon{
 	margin:10px;
-	margin-top: 3vh;
-	width: 3.5vh;
+	margin-top: 4vh;
+	width: 2.8vh;
 }
 
 a{
  color: white;
 }	
+
+.logo{
+  position: relative;
+    position: absolute;
+
+ left: calc(50% - 8vh);
+  width: 16vh;
+}
+
+.social u{
+	margin:8vw;
+}
 
  </style>
 
@@ -254,11 +258,16 @@ a{
     <canvas class="canvascover" resize></canvas>
     <div class="text"><h1>Coming Soon</h1>
     </div>
+
+    
     <div class="social">
-    	<u>Resume</u>  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a href="mailto:hello@ivanlou.net"><u>Email me</u><br>
-    	<a href="https://www.instagram.com/lyflala/"><img src="instagramlogo.png" width="25px;" ></a>
-    	<a href="https://www.linkedin.com/in/ivanloudesign/"><img src="linkedinlogo.png" width="25px;" ></a>
+    	 
+    	<a href="resume_ivanlou.pdf"><u>Resume</u></a><a href="mailto:hello@ivanlou.net"><u>Email me</u></a><br><br><br><br>
+    		<img class="logo" src="logo.png" >
+    		<br>
+    	<a href="https://www.instagram.com/lyflala/"><img class="icon" src="instagramlogo.png" width="25px;" ></a>
+    	<a href="https://www.linkedin.com/in/ivanloudesign/"><img class="icon" src="linkedinlogo.png" width="25px;" ></a>
     </div>
-    <img class="logo" src="logo.png" ><img>
+   
 </body>
 </html>
